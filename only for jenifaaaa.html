@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Kamu di Hari Valentine ❤️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            padding: 40px 20px;
+            text-align: center;
+            border: 3px solid #fff;
+            animation: fadeIn 1.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(102, 126, 234, 0.2);
+            animation: heartbeat 1.5s ease infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.1); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.1); }
+            70% { transform: scale(1); }
+        }
+
+        .subtitle {
+            color: #764ba2;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .hearts {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: #ff4757;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto 30px;
+            padding: 20px;
+        }
+
+        .romance-btn {
+            padding: 20px 10px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .romance-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .romance-btn:hover::before { left: 100%; }
+        .romance-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2); }
+        .romance-btn:active { transform: translateY(0); }
+
+        .btn-1 { background: linear-gradient(45deg, #ff6b6b, #ff4757); }
+        .btn-2 { background: linear-gradient(45deg, #ff9ff3, #f368e0); }
+        .btn-3 { background: linear-gradient(45deg, #667eea, #764ba2); }
+        .btn-4 { background: linear-gradient(45deg, #ffafbd, #ffc3a0); }
+
+        .message-box {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 500px;
+            border: 2px dashed #667eea;
+            transition: all 0.5s ease;
+            display: none;
+        }
+
+        .message-box.show {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message-title {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .message-content {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            white-space: pre-line; /* Biar enter di pesan kebaca */
+        }
+
+        /* TOMBOL GITHUB */
+        .github-section {
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 20px;
+            border: 2px dashed #667eea;
+        }
+
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #24292e;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border: 3px solid white;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .github-btn:hover {
+            background: #2f363d;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .github-btn span {
+            font-size: 1.5rem;
+        }
+
+        .github-note {
+            margin-top: 10px;
+            color: #667eea;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        /* GALLERY PORTRAIT */
+        .main-gallery {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 1000px;
+            border: 2px dashed #667eea;
+            transition: all 0.5s ease;
+            display: none;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.2);
+        }
+
+        .main-gallery.show {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        .gallery-title {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .gallery-subtitle {
+            color: #764ba2;
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .portrait-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .media-card {
+            background: white;
+            border-radius: 30px;
+            padding: 20px 20px 25px 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 4px solid white;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .media-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 50px rgba(102, 126, 234, 0.5);
+            border-color: #667eea;
+        }
+
+        .media-card::after {
+            content: '❤️';
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            font-size: 100px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+            transition: all 0.3s ease;
+        }
+
+        .media-card:hover::after {
+            opacity: 0.2;
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .video-card {
+            background: linear-gradient(145deg, #667eea, #764ba2);
+        }
+
+        .video-card iframe {
+            width: 100%;
+            height: 450px;
+            border-radius: 25px;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .photo-card {
+            background: white;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 25px;
+            border: 4px solid #667eea;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .media-caption {
+            margin-top: 20px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 8px 15px;
+            border-radius: 60px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .video-card .media-caption { color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
+        .photo-card .media-caption { color: #667eea; }
+
+        .random-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 80px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 40px 0 20px;
+            font-weight: bold;
+            border: 4px solid white;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .random-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .music-player {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 30px;
+            padding: 30px 20px;
+            margin: 20px auto;
+            max-width: 500px;
+            border: 3px solid white;
+            transition: all 0.5s ease;
+            display: none;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .music-player.show {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        .music-title {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .music-subtitle {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .spotify-embed {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin: 20px 0;
+        }
+
+        .spotify-embed iframe {
+            width: 100%;
+            height: 352px;
+            border: none;
+            display: block;
+        }
+
+        .playlist-info {
+            background: rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 0;
+            color: white;
+            text-align: left;
+        }
+
+        .playlist-info h4 {
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+
+        .playlist-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .playlist-info li {
+            margin: 8px 0;
+            padding: 5px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .back-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            display: none;
+            font-weight: bold;
+            border: 3px solid white;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #764ba2;
+            font-size: 1rem;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: #ff4757;
+            opacity: 0.6;
+            animation: float 6s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .button-grid { grid-template-columns: 1fr; }
+            .portrait-grid { grid-template-columns: 1fr; }
+            
+            .video-card iframe {
+                height: 400px;
+            }
+            .photo-card img {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container" id="mainContainer">
+        <div class="hearts">❤️ ❤️ ❤️</div>
+        <h1>Selamat Hari Valentine! ❤️</h1>
+        <div class="subtitle">Untuk seseorang yang spesial di hatiku</div>
+        
+        <div class="button-grid" id="buttonGrid">
+            <button class="romance-btn btn-1" onclick="showMessage(1)">💌 Pesan Cinta</button>
+            <button class="romance-btn btn-3" onclick="showMusicPlayer()">🎵 Musik Spesial</button>
+            <button class="romance-btn btn-4" onclick="showMediaGallery()">📸 Video & Foto</button>
+            <button class="romance-btn btn-2" onclick="showMessage(2)">🌸 Untuk Kamu</button>
+        </div>
+
+        <!-- MESSAGE BOX DENGAN TOMBOL GITHUB -->
+        <div class="message-box" id="messageBox">
+            <div class="message-title" id="messageTitle"></div>
+            <div class="message-content" id="messageContent"></div>
+            
+            <!-- TOMBOL GITHUB (hanya muncul untuk pesan ke-2) -->
+            <div id="githubButtonContainer" style="display: none;">
+                <div class="github-section">
+                    <a href="https://iann0851.github.io/kado-buat-jenifa/flower.html" 
+                       target="_blank" 
+                       class="github-btn">
+                        <span>🌹</span> lihat bungaaa
+                    </a>
+                    <div class="github-note">✨ sebuah hadiah kecil dari iannn ✨</div>
+                </div>
+            </div>
+            
+            <button class="back-btn" id="backBtn" onclick="goBack()">Kembali ❤️</button>
+        </div>
+
+        <!-- GALLERY PORTRAIT -->
+        <div class="main-gallery" id="mainGallery">
+            <div class="gallery-title">📸 Video & Foto Kenangan</div>
+            <div class="gallery-subtitle">Buat kamu yang paling spesial ❤️</div>
+            
+            <div id="mediaContainer" class="portrait-grid"></div>
+            
+            <button class="random-btn" onclick="shuffleMedia()">
+                <span style="margin-right: 15px;">🎲</span> Acak Tampilan
+            </button>
+            <br>
+            <button class="back-btn" id="backBtnGallery" onclick="goBack()" style="display: inline-block; margin-top: 20px;">Kembali ❤️</button>
+        </div>
+
+        <div class="music-player" id="musicPlayer">
+            <div class="music-title">🎵 Playlist Spesial</div>
+            <div class="music-subtitle">Lagu-lagu yang mengingatkanku padamu</div>
+            
+            <div class="spotify-embed">
+                <iframe 
+                    src="https://open.spotify.com/embed/playlist/1951Cmw3uRHU3EwHmXdDfu?utm_source=generator" 
+                    width="100%" 
+                    height="352" 
+                    frameBorder="0" 
+                    allowfullscreen="" 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="playlist-info">
+                <h4>🎧 only for jenifaaa💗</h4>
+                <ul>
+                    <li>🎵 Engga Ngerti - Kahitna (04:10)</li>
+                    <li>🎵 Soulmate - Kahitna (03:31)</li>
+                    <li>🎵 Untukku - Chrisye (04:15)</li>
+                    <li>🎵 Kasih Putih - Yovie Widianto, Glenn Fredly (03:57)</li>
+                    <li>🎵 Keabadian - Reza Artamevia (04:07)</li>
+                    <li>🎵 About You - The 1975 (05:26)</li>
+                </ul>
+                <p style="margin-top: 15px; font-style: italic;">Setiap lagu punya cerita tentang kamu 💕</p>
+            </div>
+
+            <button class="back-btn" id="backBtnMusic" onclick="goBack()" style="display: inline-block; margin-top: 25px;">Kembali ❤️</button>
+        </div>
+        
+        <div class="footer" id="footer">
+            <p>Dari hati yang tulus ❤️</p>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            const hearts = document.getElementById('floatingHearts');
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.fontSize = Math.random() * 40 + 20 + 'px';
+            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            hearts.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+
+        setInterval(createHeart, 300);
+
+        const messages = {
+            1: {
+                title: "💌 ini apa yahh",
+                content: `sayanggggg,
+terimakasiiii buattt semuanyaaa yaaa 
+akuuu beruntunggg bangettt punyaaaa kamuuu
+i am so happy with you
+
+makasiiii udaaaa jadiiii pelangiii dannn bagiannn ceritaaa hiduppp akuuuu
+akuuuu sayangggg bangettt samaaa kamuuuuu
+
+kamuuu udaaaa mauuu sabarrr ngadepinnn sikappp akuuu yanggg kandanggg buattt kamuuu kecewaaa
+kamuuu baikkk, kamuuu perhatiannn, penyayanggg dannn penyabarrr
+
+tapiii satuuu halll yanggg harusss kamuuu tauuu
+that i love you so much
+
+harusss berapaaaa kaliii akuuu bilanggg kalooo akuuu sayanggg bangettt samaaaa kamuuuu
+bahkan lebih sayangg sama kamu di banding diri ku sendiri
+
+inilah aku cowo yang memiliki segala segala kekurangan, tapi nekat mencintai kamu
+
+kamu butuh tempat cerita? aku tempat beristirahat? 
+sini pulang ke pelukan akuu, aku rumahmu mu sayangg
+
+ceritain semuanya apapun itu kita selesaikan ini sama sama yaa sayanggg
+
+okeii.🤍🤍🤍`
+            },
+            2: {
+                title: "🌸 Spesial Untuk Kamu",
+                content: "untukk hadiahnyaaa menyusulll yaaaaa soalnyaaa belum sempett beliii hehehe maapp yaa  sementara ini aja dulu yaaa cantikk loveyouumoreee 💗💗"
+            }
+        };
+
+        const mediaCollection = [
+            { 
+                type: 'photo', 
+                url: 'https://raw.githubusercontent.com/iann0851/kado-buat-jenifa/80dbadeb6e5157513fd92c784f996f96fc71e1d7/run%20this/WhatsApp%20Image%202026-02-07%20at%2023.59.05.jpeg', 
+                caption: 'adidas jenifa orii coyy 👏👏' 
+            },
+            { 
+                type: 'photo', 
+                url: 'https://raw.githubusercontent.com/iann0851/kado-buat-jenifa/80dbadeb6e5157513fd92c784f996f96fc71e1d7/run%20this/WhatsApp%20Image%202026-02-11%20at%2017.45.07.jpeg', 
+                caption: 'loss melett 😜😜' 
+            },
+            { 
+                type: 'video', 
+                fileId: '1K6FQizRN2NbBPQ3bnWJgPjPiy4cqTwvU', 
+                caption: 'ceweee siapa ini koo cantik??💘' 
+            },
+            { 
+                type: 'video', 
+                fileId: '1RkZmsaBdZFFByOvG_hE3IsLKbmfLwi-4', 
+                caption: 'jujurrrr janggall✌' 
+            }
+        ];
+
+        function showMediaGallery() {
+            document.getElementById('buttonGrid').style.display = 'none';
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('messageBox').classList.remove('show');
+            document.getElementById('musicPlayer').classList.remove('show');
+            document.getElementById('mainGallery').classList.add('show');
+            document.querySelector('h1').textContent = '📸 Video & Foto Kenangan';
+            document.querySelector('.subtitle').style.display = 'none';
+            document.querySelector('.hearts').style.display = 'none';
+            displayMedia();
+            createSpecialHeart();
+        }
+
+        function displayMedia() {
+            const container = document.getElementById('mediaContainer');
+            const shuffled = [...mediaCollection].sort(() => Math.random() - 0.5);
+            
+            let html = '';
+            
+            shuffled.forEach(media => {
+                if (media.type === 'video') {
+                    html += `
+                        <div class="media-card video-card">
+                            <iframe 
+                                src="https://drive.google.com/file/d/${media.fileId}/preview" 
+                                frameborder="0" 
+                                allow="autoplay; fullscreen" 
+                                allowfullscreen>
+                            </iframe>
+                            <div class="media-caption">${media.caption}</div>
+                        </div>
+                    `;
+                } else {
+                    html += `
+                        <div class="media-card photo-card">
+                            <img 
+                                src="${media.url}" 
+                                alt="Photo" 
+                                loading="lazy">
+                            <div class="media-caption">${media.caption}</div>
+                        </div>
+                    `;
+                }
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function shuffleMedia() {
+            displayMedia();
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => createHeart(), i * 100);
+            }
+        }
+
+        function showMusicPlayer() {
+            document.getElementById('buttonGrid').style.display = 'none';
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('messageBox').classList.remove('show');
+            document.getElementById('mainGallery').classList.remove('show');
+            document.getElementById('musicPlayer').classList.add('show');
+            document.querySelector('h1').textContent = '🎵 Musik Spesial';
+            document.querySelector('.subtitle').style.display = 'none';
+            document.querySelector('.hearts').style.display = 'none';
+            createSpecialHeart();
+        }
+
+        function showMessage(buttonNumber) {
+            document.getElementById('buttonGrid').style.display = 'none';
+            document.getElementById('footer').style.display = 'none';
+            document.getElementById('musicPlayer').classList.remove('show');
+            document.getElementById('mainGallery').classList.remove('show');
+            
+            const messageBox = document.getElementById('messageBox');
+            messageBox.classList.add('show');
+            document.getElementById('messageTitle').textContent = messages[buttonNumber].title;
+            document.getElementById('messageContent').textContent = messages[buttonNumber].content;
+            document.getElementById('backBtn').style.display = 'inline-block';
+            
+            // TAMPILIN TOMBOL GITHUB KHUSUS UNTUK PESAN KE-2
+            const githubContainer = document.getElementById('githubButtonContainer');
+            if (buttonNumber === 2) {
+                githubContainer.style.display = 'block';
+            } else {
+                githubContainer.style.display = 'none';
+            }
+            
+            document.querySelector('h1').textContent = '❤️ Untukmu ❤️';
+            document.querySelector('.subtitle').style.display = 'none';
+            document.querySelector('.hearts').style.display = 'none';
+            
+            createSpecialHeart();
+        }
+
+        function goBack() {
+            document.getElementById('buttonGrid').style.display = 'grid';
+            document.getElementById('footer').style.display = 'block';
+            document.getElementById('messageBox').classList.remove('show');
+            document.getElementById('musicPlayer').classList.remove('show');
+            document.getElementById('mainGallery').classList.remove('show');
+            document.getElementById('backBtn').style.display = 'none';
+            
+            document.querySelector('h1').textContent = 'Selamat Hari Valentine! ❤️';
+            document.querySelector('.subtitle').style.display = 'block';
+            document.querySelector('.hearts').style.display = 'block';
+        }
+
+        function createSpecialHeart() {
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createHeart(), i * 100);
+            }
+        }
+
+        window.onload = () => {
+            for (let i = 0; i < 30; i++) setTimeout(() => createHeart(), i * 100);
+        };
+
+        document.addEventListener('click', () => createHeart());
+    </script>
+</body>
+</html>
